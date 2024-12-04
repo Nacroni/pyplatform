@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-import platform
-import argparse
+import platform, argparse, os
 
 pyplatform_version = 0.8
 
@@ -26,6 +25,7 @@ freedesktop_release = platform.freedesktop_os_release()
 print('System Information')
 
 system = platform.system()
+user = os.getlogin()
 node = platform.node()
 release = platform.release()
 version = platform.version()
@@ -33,6 +33,7 @@ machine = platform.machine()
 processor = platform.processor()
 
 print(f'    System:    {system}'   )
+print(f'    User:      {user}'     )
 print(f'    Node:      {node}'     )
 print(f'    Release:   {release}'  )
 print(f'    Version:   {version}'  )
