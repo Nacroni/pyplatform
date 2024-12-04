@@ -1,0 +1,65 @@
+.\" manpage for pyplatform
+.\" contact me at thespokenone209@hotmail.com for issues.
+.\" nacroni - fyi the name for default stuff is General Commands Manual
+.TH pyplatform 1 "4 Dec 2024" "0.8" "pyplatform Manual"
+
+.SH NAME
+.B pyplatform 
+- a command to get platform information
+
+.SH SYNOPSIS
+.B pyplatform 
+[ -h ] [ --help ] [ -w ] [ --win32 ] [ -f ] [ --freedesktop ] [ -v ] [ --version ]
+
+.SH DESCRIPTION
+.B pyplatform
+is a Python script that shows information about your current system using the platform module.
+
+.SH EXAMPLES
+.B pyplatform
+
+.B pyplatform
+-wf /
+.B pyplatform
+--win32 --freedesktop
+
+.B pyplatform
+-v /
+.B pyplatform
+--version
+
+.B pyplatform
+-h /
+.B pyplatform
+--help
+
+.SH COMMAND LINE OPTIONS
+
+.SS -h, --help
+Shows help and exits
+
+.SS -w, --win32
+Shows win32 information in the normal output
+
+.SS -f, --freedesktop
+Shows freedesktop.org OS release information (JSON) in the normal output
+
+.SS -v, --version
+Shows version of software and exits
+
+.SH AUTHOR
+.SS Owner / Creator
+Nacroni - E-Mail: thespokenone209@hotmail.com
+
+.SH COPYRIGHT
+GPLv3 License, can be found in the source repo as 
+.B LICENCE.md
+
+Or you can find the license's current version online at 
+.ul
+https://www.gnu.org/licenses/gpl-3.0.en.html
+.
+
+Feel free to modify as you wish, but make sure to credit Nacroni as the creator of the main project.
+
+Thank you, and have a very safe day.
