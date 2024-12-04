@@ -12,15 +12,12 @@ args = parser.parse_args()
 
 freedesktop_enable = args.freedesktop
 win32_enable = args.win32
-version_enable = args.version
 mac_enable = args.mac
+version_enable = args.version
 
 if version_enable:
     print(f'{str(pyplatform_version)}')
     exit()
-    
-
-freedesktop_release = platform.freedesktop_os_release()
 
 print('System Information')
 
@@ -41,8 +38,9 @@ print(f'    Machine:   {machine}'  )
 print(f'    Processor: {processor}')
 
 if freedesktop_enable:
+    freedesktop_release = platform.freedesktop_os_release()
     print()
-    print(f'FreeDesktop OS Release: {freedesktop_release}')
+    print(f'Freedesktop OS Release: {freedesktop_release}')
 
 if 'Windows' in system or win32_enable:
     win32_ver = platform.win32_ver()
@@ -54,7 +52,7 @@ if 'Windows' in system or win32_enable:
     print(f'    Edition: {win32_ed}'    )
     print(f'    Is IOT:  {win32_is_iot}')
     
-if 'mac' in system or mac_enable:
+if ['macOS', 'Mac'] in system or mac_enable:
     mac_ver = platform.mac_ver()
     print()
     print('macOS Information')
@@ -76,8 +74,3 @@ print(f'    Build:          {python_build}')
 print(f'    Compiler:       {python_comp}' )
 print(f'    Implementation: {python_imp}'  )
 print(f'    Revision:       {python_rev}'  )
-
-print()
-print('PyPlatform Information')
-
-print(f'    Version: {pyplatform_version}')
