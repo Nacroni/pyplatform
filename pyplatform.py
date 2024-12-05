@@ -1,23 +1,15 @@
 #!/usr/bin/env python3
 import platform, argparse, os
 
-pyplatform_version = 0.8
-
 parser = argparse.ArgumentParser('platform_test')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
-parser.add_argument('-v', '--version', help='prints pyplatform version', action='store_true')
 args = parser.parse_args()
 
 freedesktop_enable = args.freedesktop
 win32_enable = args.win32
 mac_enable = args.mac
-version_enable = args.version
-
-if version_enable:
-    print(f'{str(pyplatform_version)}')
-    exit()
 
 print('System Information')
 

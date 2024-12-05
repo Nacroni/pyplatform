@@ -9,7 +9,7 @@
 
 .SH SYNOPSIS
 .B pyplatform 
-[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -w ] [ --win32 ] [ -m ] [ --mac ] [ -v ] [ --version ]
+[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -w ] [ --win32 ] [ -m ] [ --mac ]
 
 .SH DESCRIPTION
 .B pyplatform
@@ -22,11 +22,6 @@ is a Python script that shows information about your current system using the pl
 -wfm /
 .B pyplatform
 --win32 --freedesktop --mac
-
-.B pyplatform
--v /
-.B pyplatform
---version
 
 .B pyplatform
 -h /
@@ -46,9 +41,6 @@ Shows win32 information in the normal output
 
 .SS -m, --mac
 Shows macOS information in the normal output
-
-.SS -v, --version
-Shows version of software and exits
 
 .SH AUTHOR
 .SS Owner / Creator
