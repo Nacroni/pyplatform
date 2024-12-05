@@ -44,7 +44,7 @@ if 'Windows' in system or win32_enable:
     print(f'    Edition: {win32_ed}'    )
     print(f'    Is IOT:  {win32_is_iot}')
     
-if ['macOS', 'Mac'] in system or mac_enable:
+if 'macOS' in system or 'Mac' in system or mac_enable:
     mac_ver = platform.mac_ver()
     print()
     print('macOS Information')
