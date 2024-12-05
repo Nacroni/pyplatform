@@ -1,7 +1,7 @@
 .\" manpage for pyplatform
 .\" contact me at thespokenone209@hotmail.com for issues.
 .\" nacroni - fyi the name for default stuff is General Commands Manual
-.TH pyplatform 1 "4 Dec 2024" "0.8" "pyplatform Manual"
+.TH pyplatform 1 "4 Dec 2024" "main Branch" "pyplatform Manual"
 
 .SH NAME
 .B pyplatform 
