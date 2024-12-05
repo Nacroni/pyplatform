@@ -36,13 +36,13 @@ if freedesktop_enable:
 
 if 'Windows' in system or win32_enable:
     win32_ver = platform.win32_ver()
-    win32_ed = platform.win32_ver()
+    win32_ed = platform.win32_edition()
     win32_is_iot = platform.win32_is_iot()
     print()
     print('Win32 Information')
-    print(f'    Version: {win32_ver}'   )
-    print(f'    Edition: {win32_ed}'    )
-    print(f'    Is IOT:  {win32_is_iot}')
+    print(f'    Version:               {win32_ver}'   )
+    print(f'    Edition:               {win32_ed}'    )
+    print(f'    Is IoT / Is Embedded:  {win32_is_iot}')
     
 if 'macOS' in system or 'Mac' in system or mac_enable:
     mac_ver = platform.mac_ver()
