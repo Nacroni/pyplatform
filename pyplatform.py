@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import platform, argparse, os, time
 
-parser = argparse.ArgumentParser('platform_test')
+parser = argparse.ArgumentParser('platform_test', description='Python-based system information giver using platform module', epilog='thanks! ;  main Branch ; updated 2024-12-5 ; by Nacroni')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
@@ -23,30 +23,31 @@ processor = platform.processor()
 uptime_monotonic = time.monotonic()
 uptime_boottime = time.clock_gettime(time.CLOCK_BOOTTIME)
 
-print(f'    System:           {system}'          )
-print(f'    User:             {user}'            )
-print(f'    Node:             {node}'            )
-print(f'    Uptime Monotonic: {uptime_monotonic}')
-print(f'    Uptime:           {uptime_boottime}' )
-print(f'    Release:          {release}'         )
-print(f'    Version:          {version}'         )
-print(f'    Machine:          {machine}'         )
-print(f'    Processor:        {processor}'       )
+print(f'    System:       {system}'          )
+print(f'    User:         {user}'            )
+print(f'    Node:         {node}'            )
+print(f'    Uptime Awake: {uptime_monotonic}') # nac: should we call this monotonic or awake?
+print(f'    Uptime:       {uptime_boottime}' )
+print(f'    Release:      {release}'         )
+print(f'    Version:      {version}'         )
+print(f'    Machine:      {machine}'         )
+print(f'    Processor:    {processor}'       )
 
 if freedesktop_enable:
     freedesktop_release = platform.freedesktop_os_release()
     print()
-    print(f'Freedesktop OS Release: {freedesktop_release}')
+    print(f'Freedesktop Information')
+    print(f'    OS Release: {freedesktop_release}')
 
 if 'Windows' in system or win32_enable:
     win32_ver = platform.win32_ver()
     win32_ed = platform.win32_edition()
     win32_is_iot = platform.win32_is_iot()
     print()
-    print('Win32 Information')
-    print(f'    Version:               {win32_ver}'   )
-    print(f'    Edition:               {win32_ed}'    )
-    print(f'    Is IoT / Is Embedded:  {win32_is_iot}')
+    print('Windows (Win32) Information')
+    print(f'    Version: {win32_ver}'   )
+    print(f'    Edition: {win32_ed}'    )
+    print(f'    Is IoT:  {win32_is_iot}')
     
 if 'macOS' in system or 'Mac' in system or mac_enable:
     mac_ver = platform.mac_ver()
