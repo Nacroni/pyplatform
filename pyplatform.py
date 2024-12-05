@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import platform, argparse, os
+import platform, argparse, os, time
 
 parser = argparse.ArgumentParser('platform_test')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information', action='store_true')
@@ -20,14 +20,18 @@ release = platform.release()
 version = platform.version()
 machine = platform.machine()
 processor = platform.processor()
+uptime_monotonic = time.monotonic()
+uptime_boottime = time.clock_gettime(time.CLOCK_BOOTTIME)
 
-print(f'    System:    {system}'   )
-print(f'    User:      {user}'     )
-print(f'    Node:      {node}'     )
-print(f'    Release:   {release}'  )
-print(f'    Version:   {version}'  )
-print(f'    Machine:   {machine}'  )
-print(f'    Processor: {processor}')
+print(f'    System:           {system}'          )
+print(f'    User:             {user}'            )
+print(f'    Node:             {node}'            )
+print(f'    Uptime Monotonic: {uptime_monotonic}')
+print(f'    Uptime:           {uptime_boottime}' )
+print(f'    Release:          {release}'         )
+print(f'    Version:          {version}'         )
+print(f'    Machine:          {machine}'         )
+print(f'    Processor:        {processor}'       )
 
 if freedesktop_enable:
     freedesktop_release = platform.freedesktop_os_release()
