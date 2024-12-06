@@ -48,7 +48,7 @@ Nacroni - E-Mail: thespokenone209@hotmail.com
 
 .SH COPYRIGHT
 GPLv3 License, can be found in the source repo as 
-.B LICENCE.md
+.B LICENSE.md
 
 Or you can find the license's current version online at 
 .ul
