@@ -34,25 +34,31 @@ print(f'    Machine:      {machine}'         )
 print(f'    Processor:    {processor}'       )
 
 if freedesktop_enable:
-    freedesktop_release = platform.freedesktop_os_release()
     print()
     print(f'Freedesktop Information')
+    
+    freedesktop_release = platform.freedesktop_os_release()
+    
     print(f'    OS Release: {freedesktop_release}')
 
 if 'Windows' in system or win32_enable:
+    print()
+    print('Windows (Win32) Information')
+    
     win32_ver = platform.win32_ver()
     win32_ed = platform.win32_edition()
     win32_is_iot = platform.win32_is_iot()
-    print()
-    print('Windows (Win32) Information')
+    
     print(f'    Version: {win32_ver}'   )
     print(f'    Edition: {win32_ed}'    )
     print(f'    Is IoT:  {win32_is_iot}')
     
 if 'macOS' in system or 'Mac' in system or mac_enable:
-    mac_ver = platform.mac_ver()
     print()
     print('macOS Information')
+    
+    mac_ver = platform.mac_ver()
+    
     print(f'    Version: {mac_ver}')
 
 print()
