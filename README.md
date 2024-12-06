@@ -1,6 +1,6 @@
 # `pyplatform`
 
-`pyplatform` is a script that shows information about your system. It uses the `platform` module in Python *(alongside `os` to get the user name and possible other details)*.
+`pyplatform` is a script that shows information about your system. It mainly uses the `platform` module in Python.
 
 ## Usage
 
