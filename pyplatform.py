@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import platform, argparse, os, time
 
-parser = argparse.ArgumentParser('pyplatform', description='Python-based system information giver using platform module', epilog='thanks! ;  main Branch ; updated 2024-12-5 ; by Nacroni')
-parser.add_argument('-f', '--freedesktop', help='[bool] prints the freedesktop.org OS release information', nargs='?', const=True, default=False, type=bool)
-parser.add_argument('-w', '--win32', help='[bool] prints Win32 information', nargs='?', const=True, default=False, type=bool)
-parser.add_argument('-m', '--mac', help='[bool] prints macOS information', nargs='?', const=True, default=False, type=bool)
+parser = argparse.ArgumentParser('pyplatform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2024-12-6 ; by Nacroni')
+parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information', action='store_true')
+parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
+parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
 args = parser.parse_args()
 
 freedesktop_enable = args.freedesktop
