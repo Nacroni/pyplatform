@@ -35,7 +35,7 @@ print(f'    Processor:    {processor}'       )
 
 if freedesktop_enable:
     print()
-    print(f'Freedesktop Information')
+    print('freedesktop.org Information')
     
     freedesktop_release = platform.freedesktop_os_release()
     
