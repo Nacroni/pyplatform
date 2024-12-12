@@ -55,6 +55,4 @@ Or you can find the license's current version online at
 https://www.gnu.org/licenses/gpl-3.0.en.html
 .
 
-Feel free to modify as you wish, but make sure to credit Nacroni as the creator of the main project.
-
 Thank you, and have a very safe day.
