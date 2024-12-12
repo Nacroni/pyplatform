@@ -6,20 +6,7 @@
 
 ### Running 
 
-You can use `pyplatform` by either opening it normally using Python, or by opening it directly, as long as the script has the executable permission.
-
-#### Python (All Platforms)
-
-```bash
-python ./pyplatform.py
-```
-
-#### Direct Execution (only on certain platforms)
-
-```bash
-chmod +x ./pyplatform.py # You don't need to do this if it already has the executable permission.
-./pyplatform.py
-```
+You can use `pyplatform` by opening it through [Python](https://python.org/). *Latest version of Python used was [`3.11.11`](https://www.python.org/downloads/release/python-31111/)*
 
 ### Arguments
 

@@ -16,13 +16,14 @@ print('System Information')
 system = platform.system()
 user = os.getlogin()
 node = platform.node()
+uptime_monotonic = time.monotonic()
+uptime_boottime = time.clock_gettime(time.CLOCK_BOOTTIME)
 release = platform.release()
 version = platform.version()
 machine = platform.machine()
 processor = platform.processor()
-uptime_monotonic = time.monotonic()
-uptime_boottime = time.clock_gettime(time.CLOCK_BOOTTIME)
 
+#    (f'    name:         {var}'             )
 print(f'    System:       {system}'          )
 print(f'    User:         {user}'            )
 print(f'    Node:         {node}'            )
@@ -36,19 +37,15 @@ print(f'    Processor:    {processor}'       )
 if freedesktop_enable:
     print()
     print('freedesktop.org Information')
-    
     freedesktop_release = platform.freedesktop_os_release()
-    
     print(f'    OS Release: {freedesktop_release}')
 
 if 'Windows' in system or win32_enable:
     print()
     print('Windows (Win32) Information')
-    
     win32_ver = platform.win32_ver()
     win32_ed = platform.win32_edition()
     win32_is_iot = platform.win32_is_iot()
-    
     print(f'    Version: {win32_ver}'   )
     print(f'    Edition: {win32_ed}'    )
     print(f'    Is IoT:  {win32_is_iot}')
@@ -56,9 +53,7 @@ if 'Windows' in system or win32_enable:
 if 'macOS' in system or 'Mac' in system or mac_enable:
     print()
     print('macOS Information')
-    
     mac_ver = platform.mac_ver()
-    
     print(f'    Version: {mac_ver}')
 
 print()
@@ -71,6 +66,7 @@ python_comp =  platform.python_compiler()
 python_imp = platform.python_implementation()
 python_rev = platform.python_revision()
 
+#    (f'    name:           {var}'         )
 print(f'    Version:        {python_ver}'  )
 print(f'    Branch:         {python_br}'   )
 print(f'    Build:          {python_build}')
