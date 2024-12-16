@@ -1,46 +1,51 @@
 #!/usr/bin/env python3
 import platform, argparse, os, time
 
+# This allows for the user to pass arguments to the script, allowing for certain information to be shown:
 parser = argparse.ArgumentParser('pyplatform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2024-12-6 ; by Nacroni')
-parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information', action='store_true')
+parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release (may crash script!)', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
 args = parser.parse_args()
 
+# This allows the script to see whether or not a certain argument is enabled.
 freedesktop_enable = args.freedesktop
 win32_enable = args.win32
 mac_enable = args.mac
 
 print('System Information')
 
+# I'm sorry about the method I use for variables, but this method is more interesting to me tbh =3
 system = platform.system()
 user = os.getlogin()
-node = platform.node()
+hostname = platform.node()
 uptime_monotonic = time.monotonic()
 uptime_boottime = time.clock_gettime(time.CLOCK_BOOTTIME)
 release = platform.release()
 version = platform.version()
 machine = platform.machine()
 processor = platform.processor()
+processor_count = os.cpu_count()
 
 #    (f'    name:         {var}'             )
 print(f'    System:       {system}'          )
 print(f'    User:         {user}'            )
-print(f'    Node:         {node}'            )
-print(f'    Uptime Awake: {uptime_monotonic}') # nac: should we call this monotonic or awake?
+print(f'    Hostname:     {hostname}'        )
+print(f'    Uptime Awake: {uptime_monotonic}')
 print(f'    Uptime:       {uptime_boottime}' )
 print(f'    Release:      {release}'         )
 print(f'    Version:      {version}'         )
 print(f'    Machine:      {machine}'         )
 print(f'    Processor:    {processor}'       )
+print(f'    Proc. Amount: {processor_count}' )
 
-if freedesktop_enable:
+if freedesktop_enable: # If the 'freedesktop' argument is used...
     print()
     print('freedesktop.org Information')
-    freedesktop_release = platform.freedesktop_os_release()
+    freedesktop_release = platform.freedesktop_os_release() # This method prevents a crash even if the argument isnt called. Only when the argument is called then it'll crash if it does.
     print(f'    OS Release: {freedesktop_release}')
 
-if 'Windows' in system or win32_enable:
+if 'Windows' in system or win32_enable: # If the user is running Windows or the Win32 argument is used...
     print()
     print('Windows (Win32) Information')
     win32_ver = platform.win32_ver()
@@ -50,7 +55,7 @@ if 'Windows' in system or win32_enable:
     print(f'    Edition: {win32_ed}'    )
     print(f'    Is IoT:  {win32_is_iot}')
     
-if 'macOS' in system or 'Mac' in system or mac_enable:
+if 'macOS' in system or 'Mac' in system or mac_enable: # If the user is running macOS/Mac OS or the Mac argument is used...
     print()
     print('macOS Information')
     mac_ver = platform.mac_ver()
