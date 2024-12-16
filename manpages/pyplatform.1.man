@@ -34,7 +34,7 @@ is a Python script that shows information about your current system using the pl
 Shows help and exits
 
 .SS -f, --freedesktop
-Shows freedesktop.org OS release information (JSON) in the normal output
+Shows freedesktop.org OS release information from /etc/os-release in JSON in the normal output
 
 .SS -w, --win32
 Shows win32 information in the normal output

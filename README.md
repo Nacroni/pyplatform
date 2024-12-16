@@ -12,7 +12,7 @@ You can use `pyplatform` by opening it through [Python](https://python.org/). *L
 
 #### Freedesktop OS Release info : `-f`, `--freedesktop`
 
-This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system.
+This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system from `/etc/os-release`. This may cause crashes if your system does not have the file.
 
 #### Win32 info : `-w`, `--win32`
 
